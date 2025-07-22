@@ -1,44 +1,93 @@
 {
-  "name": "expense-tracker-electron",
-  "version": "0.7.0",
-  "description": "Expense Tracker Stackathon Project using Electron.js D3 and React Hooks",
-  "author": "Danny Berger",
-  "homepage": "https://github.com/KungoJung/expense-tracker-electron",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KungoJung/expense-tracker-electron.git"
+  "name": "openhorizon-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource/dm-sans": "^5.2.6",
+    "@hookform/resolvers": "^5.1.1",
+    "@mui/icons-material": "^7.2.0",
+    "@mui/material": "^7.2.0",
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "@reduxjs/toolkit": "^2.8.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/css-modules": "^1.0.5",
+    "@types/fluent-ffmpeg": "^2.1.27",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/yandex-maps": "^2.1.36",
+    "axios": "^1.10.0",
+    "css-loader": "^7.1.2",
+    "electron-log": "^5.4.1",
+    "fluent-ffmpeg": "^2.1.3",
+    "framer-motion": "^12.23.0",
+    "node-fetch": "^3.3.2",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^10.2.4",
+    "postcss-selector-parser": "^7.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.3.8",
+    "react-hook-form": "^7.59.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.6.3",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.5",
+    "redux-persist": "^6.0.0",
+    "style-loader": "^4.0.0",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^4.9.5",
+    "uuid": "^11.1.0",
+    "web-vitals": "^2.1.4",
+    "zod": "^3.25.74"
   },
-  "license": "none",
-  "main": "main.js",
+  "main": "electron/main.js",
   "scripts": {
-    "prod": "webpack --config webpack.build.config.js && electron --noDevServer .",
-    "dev": "webpack-dev-server --hot --host 0.0.0.0 --port 4000 --config=./webpack.dev.config.js",
-    "build": "webpack --config webpack.build.config.js",
-    "package": "webpack --config webpack.build.config.js",
-    "postpackage": "electron-packager ./ --out=./builds"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron": "electron .",
+    "dev": "concurrently \"react-scripts start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "@types/react-redux": "^7.1.34",
     "@types/uuid": "^10.0.0",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.1.2",
-    "babel-preset-react": "^6.24.1",
-    "babili-webpack-plugin": "^0.1.2",
-    "css-loader": "^0.28.1",
-    "electron": "^1.7.8",
-    "electron-packager": "^9.1.0",
-    "extract-text-webpack-plugin": "^3.0.1",
-    "file-loader": "^1.1.5",
-    "html-webpack-plugin": "^2.28.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "style-loader": "^0.19.0",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.4.5"
-  },
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "electron-json-storage": "^4.3.0",
-    "react-bootstrap": "^1.0.0-beta.9",
-    "uuid": "^11.1.0"
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "css": "^3.0.0",
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12",
+    "install": "^0.13.0",
+    "npm": "^11.4.2",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.5.6",
+    "react-app-rewired": "^2.2.1",
+    "tailwind": "^4.0.0",
+    "wait-on": "^8.0.3"
   }
 }
